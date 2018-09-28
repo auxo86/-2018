@@ -22,5 +22,14 @@ namespace 狀態管理.Controllers
 
             return View();
         }
+        public ActionResult SessionDemo()
+        {
+          if (Session["count"] == null)
+                Session["count"] = 0;
+            else
+                //注意轉型，因為還原時本來是obj型別
+                Session["count"] = (int)Session["count"] + 1;
+            return View();
+        }
     }
 }
